@@ -8,6 +8,8 @@
     - Para obtener la IP interna del pod podemos utilizar el siguiente comando:
     $ kubectl get pods -o wide
     donde lista la información detallada de todos los pods del namespaces default y nos mostrar las ips de los pods.
+    ![](images/exercise_1/image_1B.png)
+    
     O podemos con el siguiente comando que describe la inforación de un pod en especifico, que de igual manera nos muestra su ip interna.
     $ kubectl describe pod nginx-server-v1
 
@@ -19,7 +21,7 @@
  debes llevar a cabo?
     Para exponer utilizamos el comando port-forward para asignarle una ip 8080 para que sea accesible a nuestera pc.
     $ kubectl port-forward nginx-server-v1 8080:80
-    
+
 *Indica la calidad de servicio (QoS) establecida en el pod que acabas de
  crear. ¿Qué lo has mirado?
     -para verificar la calidad de servicio que tiene el pod lanzamos el siguiente comando para ver de forma detallada el pod 
