@@ -9,6 +9,7 @@
     $ kubectl get pods -o wide
     donde lista la información detallada de todos los pods del namespaces default y nos mostrar las ips de los pods.
     ![](hw-02/images/exercise_1/image_1B.png)
+    <img src="hw-02/images/exercise_1/image_1B.png">
 
     O podemos con el siguiente comando que describe la inforación de un pod en especifico, que de igual manera nos muestra su ip interna.
     $ kubectl describe pod nginx-server-v1
