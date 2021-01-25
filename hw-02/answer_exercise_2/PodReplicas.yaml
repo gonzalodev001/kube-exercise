@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nginx-server-demo
-  namespace: sandbox
+  name: nginx-server-replicaset
   labels:
-    app: nginx-server-demo
-    tier: backend
+    app: nginx-server-replicaset
 spec:
   replicas: 3
   selector:
     matchLabels:
-      tier: backend
+      app: nginx-server-replicaset
   template:
     metadata:
       labels:
-        tier: backend
+        app: nginx-server-replicaset
     spec:
       containers:
-      - name: nginx-server-demo
+      - name: nginx-server-replicaset
         image: nginx:1.19.4
+        ports:
+        - containerPort: 80
         resources:
           limits:
             cpu: 100m
