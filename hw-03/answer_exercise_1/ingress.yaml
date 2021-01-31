@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata: 
+  name: nginx-ingress
+  namespace: part-second
+spec:
+  tls:
+  - secretName: nginx-secret-tls
+    hosts:
+      - gonzalo.student.lasalle.com
+  rules:
+  - host: gonzalo.student.lasalle.com
+    http:
+      paths:
+      - backend:
+          serviceName: nginx-svc
+          servicePort: 80
