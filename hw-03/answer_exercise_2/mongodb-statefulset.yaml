@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo
+spec:
+  selector:
+    matchLabels:
+      db: mongodb
+  serviceName: mongodb-svc
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        db: mongodb
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mongo
+        image: mongo:4.4.1
+        command:
+          - mongod
+        args:
+          - --bind_ip=0.0.0.0
+          - --replSet=rs0
+          - --dbpath=/data/db
+        livenessProbe:
+          exec:
+            command:
+              - mongo
+              - --eval
+              - "db.adminCommand('ping')"
+        ports:
+        - containerPort: 27017
