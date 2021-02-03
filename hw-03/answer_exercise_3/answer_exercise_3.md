@@ -5,7 +5,7 @@
   de replicas para que funcione el hpa, luego temos el recurso del cpu 
   utilizada al 50%.
 
-  Una vez creados nuestros obejtos, verificamos al inico que el uso de cpu es 0%,
+  Una vez creados nuestros objetos, verificamos al inico que el uso de cpu es 0%,
   al hacer tráfico a nuestro servicio depués de un tiempo vemos que empieza a hacer 
   el uso del cpu 146% superando la asignada en nuestra relga en hpa. 
   
