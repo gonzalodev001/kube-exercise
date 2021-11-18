@@ -8,7 +8,11 @@
 1B ¿Cómo podría obtener la IP interna del pod? Aporta capturas para indicar
  el proceso que seguirías.
 
-    - Para obtener la IP interna del pod podemos utilizar el siguiente comando:
+    - Para obtener la IP interna del pod y que imprima por pantalla  podemos utilizar el siguiente comando:
+	
+    $ kubectl get pod nginx-server-v1 --template={{.status.podIP}} 
+
+    otra alternativa listando los pods
 
     $ kubectl get pods -o wide
 
@@ -16,7 +20,8 @@
 
     <img src="hw-02/images/exercise_1/image_1B.png">
 
-    O podemos con el siguiente comando que describe la inforación de un pod en especifico, que de igual manera nos muestra su ip interna.
+    O podemos con el siguiente comando que describe la inforación de un pod en especifico, que de igual manera 
+    nos muestra su ip interna.
 
     $ kubectl describe pod nginx-server-v1
 
@@ -40,4 +45,5 @@
 
     $ kubectl get pod nginx-server-v1 -n default --output=yaml
     
-    que nos mostrara un json con la información de las características del pod, donde nos muestra la calidad de servicio Qos que es Guaranteed (Garantizada) como se observa en la imagen.
+    que nos mostrara un json con la información de las características del pod, donde nos muestra la calidad de servicio Qos
+    que es Guaranteed (Garantizada) como se observa en la imagen.
