@@ -46,4 +46,5 @@
     $ kubectl get pod nginx-server-v1 -n default --output=yaml
     
     que nos mostrara un json con la información de las características del pod, donde nos muestra la calidad de servicio Qos
-    que es Guaranteed (Garantizada) como se observa en la imagen.
+    que es Guaranteed (Garantizada) como se observa en la imagen, se encuentran en 
+    kube-exercise/hw-02/images/exercise_1/
