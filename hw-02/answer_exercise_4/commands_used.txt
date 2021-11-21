@@ -1,0 +1,37 @@
+4.-Crear un objeto de tipo deployment con las especificaciones del ejercicio 1
+
+  -Creamos y ejecutamos el deployment Recreatedeployment.yaml que se creara
+   en el namespace sandbox, que contiene la imagen de nginx con una archivo
+   index.html que indica la version 1, descargado de mi repositorio dockerhub
+   la imagen es gonzadev001/myapp:v1   
+  
+   $ kubectl create -f Recreatedeployment.yaml
+
+   Los resultados se encuentra en la imagen exercise4.png
+
+4A.- Desplegamos la nueva version v2 con al tecnica recreate en el namespace sandbox,
+     que contiene la configuracion el objeto Recreatedeploymnetv2.yaml, que contiene la imagen
+     gonzadev001/myapp:v2 que contiene el index.html con la version 2
+
+   $ kubectl apply -f Recreatedeploymnetv2.yaml
+
+  Los pods se habran actualizado y cambiado de hash, los resultados se encuentran en las
+  imagenes exerciseRecreate4A.png y exerciseRecreate4AA.png
+
+4B.- Desplegamos una nueva version con la strategia rollout deployment en el namespace sandbox
+     que contiene la configuracion el objeto Rolloutdeployment.yaml, que descargara desde mi
+     repositorio la imagen gonzadev001/myapp:v3 con la version 3 que contiene el index.html VERSION 3
+
+   $ kubectl apply -f Rolloutdeployment.yaml 
+
+     Los pods se actualizaran a la version 3 y cambiado de hash como se observa en la imagen exerciseRollout4B.png
+
+4.- Para realizar un rollback a la version anterior generada ejecutamos el siguiente comando, los resultados
+    se encuentran en la imagen exerciseRollback4C.png
+
+   $ kubectl rollout undo deployment myapp-deployment -n sandbox
+
+Los resultados de cada apartado se encuentran en las imagenes adjuntadas.
+
+
+

@@ -7,6 +7,5 @@ spec:
     app: nginx-server-replicaset
   type: ClusterIP
   ports:
-  - protocol: TCP
-    port: 80
+  - port: 80
     targetPort: 80

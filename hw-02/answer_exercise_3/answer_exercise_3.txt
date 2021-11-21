@@ -1,0 +1,26 @@
+3A.- Exponiendo el servicio hacia el exterior (crea service1.yaml)
+  -Creamos el servicio.
+   
+    $ kubectl create -f service1.yaml
+  
+  - Describimos el servicio para ver la información y verificar que el selector 
+    y las ips de los pods en el endpoint del servicio son las que indicamos.
+   
+    $ kubectl describe svc nginx-server-service1
+    $ kubectl get pods -o wide (para ver las ips de los pods)
+  
+  - si hacemos un curl de la ip del node y el puerto asignado 32629 del servicio 
+    veremos que se expone al exterior.
+    
+    $ curl http://192.168.99.100:32629
+ 
+  Los resultados se muestran en la imagen results_3A
+
+3B.- Ejecutamos los mismo comandos que en el anterior y nos muestra que nuestro
+     servicio ahora es de tipo ClusterIP y las ips de los PODS asociados al 
+     el endpoints del servicio creado.
+     Los resultados se muestran en la imagen results_3B
+
+3C.- Creamos el archivo service3.yaml que en este caso añadimos la etiqueta 
+     nodePort para asignarle un puerot especifico 30010 y ejecutando los comandos anteriores.
+     Los resultados se muestran en la imagen results_3B  

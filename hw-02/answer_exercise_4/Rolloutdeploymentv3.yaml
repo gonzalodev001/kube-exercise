@@ -23,6 +23,11 @@ spec:
       containers:
       - name: myapp
         image: gonzadev001/myapp:v3
-        ports:
-        - name: http
-          containerPort: 8080
+        resources:
+          limits:
+            cpu: 100m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 256Mi
+
